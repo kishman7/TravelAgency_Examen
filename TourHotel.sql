@@ -1,0 +1,92 @@
+use TravelAgency;
+
+create table TourHotel (
+	id INT primary key IDENTITY(1,1),
+	TourID INT FOREIGN KEY REFERENCES Tour(ID),
+	HotelID INT FOREIGN KEY REFERENCES Hotel(ID),
+);
+
+SET IDENTITY_INSERT TourHotel ON;
+
+insert into TourHotel (id, TourID, HotelID) values (1, 26, 25);
+insert into TourHotel (id, TourID, HotelID) values (2, 4, 11);
+insert into TourHotel (id, TourID, HotelID) values (3, 26, 5);
+insert into TourHotel (id, TourID, HotelID) values (4, 25, 30);
+insert into TourHotel (id, TourID, HotelID) values (5, 6, 10);
+insert into TourHotel (id, TourID, HotelID) values (6, 3, 32);
+insert into TourHotel (id, TourID, HotelID) values (7, 5, 18);
+insert into TourHotel (id, TourID, HotelID) values (8, 8, 29);
+insert into TourHotel (id, TourID, HotelID) values (9, 9, 45);
+insert into TourHotel (id, TourID, HotelID) values (10, 23, 47);
+insert into TourHotel (id, TourID, HotelID) values (11, 11, 26);
+insert into TourHotel (id, TourID, HotelID) values (12, 4, 48);
+insert into TourHotel (id, TourID, HotelID) values (13, 15, 33);
+insert into TourHotel (id, TourID, HotelID) values (14, 17, 14);
+insert into TourHotel (id, TourID, HotelID) values (15, 22, 39);
+insert into TourHotel (id, TourID, HotelID) values (16, 5, 37);
+insert into TourHotel (id, TourID, HotelID) values (17, 13, 1);
+insert into TourHotel (id, TourID, HotelID) values (18, 23, 1);
+insert into TourHotel (id, TourID, HotelID) values (19, 8, 18);
+insert into TourHotel (id, TourID, HotelID) values (20, 12, 3);
+insert into TourHotel (id, TourID, HotelID) values (21, 26, 34);
+insert into TourHotel (id, TourID, HotelID) values (22, 11, 13);
+insert into TourHotel (id, TourID, HotelID) values (23, 15, 16);
+insert into TourHotel (id, TourID, HotelID) values (24, 3, 23);
+insert into TourHotel (id, TourID, HotelID) values (25, 2, 4);
+insert into TourHotel (id, TourID, HotelID) values (26, 6, 19);
+insert into TourHotel (id, TourID, HotelID) values (27, 2, 46);
+insert into TourHotel (id, TourID, HotelID) values (28, 12, 29);
+insert into TourHotel (id, TourID, HotelID) values (29, 29, 44);
+insert into TourHotel (id, TourID, HotelID) values (30, 17, 32);
+insert into TourHotel (id, TourID, HotelID) values (31, 21, 28);
+insert into TourHotel (id, TourID, HotelID) values (32, 17, 22);
+insert into TourHotel (id, TourID, HotelID) values (33, 23, 2);
+insert into TourHotel (id, TourID, HotelID) values (34, 11, 49);
+insert into TourHotel (id, TourID, HotelID) values (35, 2, 12);
+insert into TourHotel (id, TourID, HotelID) values (36, 24, 1);
+insert into TourHotel (id, TourID, HotelID) values (37, 19, 30);
+insert into TourHotel (id, TourID, HotelID) values (38, 19, 39);
+insert into TourHotel (id, TourID, HotelID) values (39, 24, 44);
+insert into TourHotel (id, TourID, HotelID) values (40, 12, 2);
+insert into TourHotel (id, TourID, HotelID) values (41, 9, 40);
+insert into TourHotel (id, TourID, HotelID) values (42, 22, 28);
+insert into TourHotel (id, TourID, HotelID) values (43, 1, 49);
+insert into TourHotel (id, TourID, HotelID) values (44, 20, 29);
+insert into TourHotel (id, TourID, HotelID) values (45, 18, 36);
+insert into TourHotel (id, TourID, HotelID) values (46, 23, 6);
+insert into TourHotel (id, TourID, HotelID) values (47, 12, 6);
+insert into TourHotel (id, TourID, HotelID) values (48, 5, 48);
+insert into TourHotel (id, TourID, HotelID) values (49, 21, 10);
+insert into TourHotel (id, TourID, HotelID) values (50, 12, 10);
+insert into TourHotel (id, TourID, HotelID) values (51, 13, 24);
+insert into TourHotel (id, TourID, HotelID) values (52, 11, 18);
+insert into TourHotel (id, TourID, HotelID) values (53, 8, 4);
+insert into TourHotel (id, TourID, HotelID) values (54, 24, 11);
+insert into TourHotel (id, TourID, HotelID) values (55, 25, 32);
+insert into TourHotel (id, TourID, HotelID) values (56, 9, 36);
+insert into TourHotel (id, TourID, HotelID) values (57, 26, 35);
+insert into TourHotel (id, TourID, HotelID) values (58, 13, 33);
+insert into TourHotel (id, TourID, HotelID) values (59, 27, 9);
+insert into TourHotel (id, TourID, HotelID) values (60, 3, 45);
+insert into TourHotel (id, TourID, HotelID) values (61, 21, 26);
+insert into TourHotel (id, TourID, HotelID) values (62, 13, 15);
+insert into TourHotel (id, TourID, HotelID) values (63, 26, 34);
+insert into TourHotel (id, TourID, HotelID) values (64, 18, 14);
+insert into TourHotel (id, TourID, HotelID) values (65, 4, 27);
+insert into TourHotel (id, TourID, HotelID) values (66, 29, 34);
+insert into TourHotel (id, TourID, HotelID) values (67, 15, 7);
+insert into TourHotel (id, TourID, HotelID) values (68, 30, 14);
+insert into TourHotel (id, TourID, HotelID) values (69, 9, 16);
+insert into TourHotel (id, TourID, HotelID) values (70, 5, 45);
+insert into TourHotel (id, TourID, HotelID) values (71, 29, 36);
+insert into TourHotel (id, TourID, HotelID) values (72, 9, 22);
+insert into TourHotel (id, TourID, HotelID) values (73, 24, 3);
+insert into TourHotel (id, TourID, HotelID) values (74, 26, 34);
+insert into TourHotel (id, TourID, HotelID) values (75, 17, 33);
+insert into TourHotel (id, TourID, HotelID) values (76, 14, 33);
+insert into TourHotel (id, TourID, HotelID) values (77, 14, 34);
+insert into TourHotel (id, TourID, HotelID) values (78, 5, 42);
+insert into TourHotel (id, TourID, HotelID) values (79, 2, 43);
+insert into TourHotel (id, TourID, HotelID) values (80, 10, 6);
+
+SET IDENTITY_INSERT TourHotel OFF;
