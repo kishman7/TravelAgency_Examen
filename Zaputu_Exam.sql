@@ -193,7 +193,7 @@ group by Country
 order by Country
 --22. Показати найдовший та найкоротший тур у форматі: Найкоротший: Назва +
 --країни + тривалість, найдовший: назва + країни + тривалість
-select top 1 NameTour, Country, MAX(DISTINCT DATEDIFF(day, DateStartTour, DateFinishTour)) as  DaysTour
+select NameTour, Country, MAX(DISTINCT DATEDIFF(day, DateStartTour, DateFinishTour)) as  DaysTour
 from Tour
 group by NameTour, Country
 order by DaysTour desc
@@ -231,8 +231,8 @@ begin
 	declare @avg_price int
 	select  @avg_price = AVG(PriceTour) 
 	from Tour
-	where NameTour = @country
-	--group by NameTour, Country
+	where Country = @country
+	group by  Country
 	return @avg_price
 end
 
@@ -246,16 +246,34 @@ select   AVG(PriceTour) as AvgPrice
 	where Country = 'Ukraine'
 	--group by NameTour, Country
 --27. Функція, яка повертає всі можливі тури агенства в певну країну, якщо ціна туру більша за середню
-alter function CountryTour()
-returns @table table (ID int, NameTour nvarchar(50), Country nvarchar(50), PriceTour int, AvgSuma int)
+
+--alter function CountryTour(@country varchar)
+--returns @table table (ID int, NameTour nvarchar(50), PriceTour money)
+--as
+--begin
+--	insert into @table
+--	select Id, NameTour, PriceTour
+--	from Tour
+--	where Country = @country and PriceTour > (
+--		select AVG(PriceTour)
+--		from Tour)
+--	return
+--end
+
+alter function CountryTour(@country varchar)
+returns @table table 
+(ID int, NameTour nvarchar(50), PriceTour money)
 as
 begin
 	insert into @table
-	select Id, NameTour, Country, PriceTour, AVG(PriceTour)
+	select Id, NameTour, PriceTour
 	from Tour
-	group by Id, NameTour, Country, PriceTour
-	having PriceTour > AVG(PriceTour)
+	where Country = @country and PriceTour > (
+		select AVG(PriceTour)
+		from Tour)
 	return
 end
+declare @country varchar(50)
+set @country = 'France'
 
-select * from CountryTour()
+select * from CountryTour(@country)
